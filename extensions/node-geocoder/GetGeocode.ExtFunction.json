@@ -1,0 +1,14 @@
+{
+  "async": false,
+  "dual": false,
+  "parameters": [
+    {
+      "name": "locationInfo",
+      "optional": true,
+      "remarks": "flex parameter that contains all the info by attributes",
+      "type": "any"
+    }
+  ],
+  "remarks": "gets geocode information from an address",
+  "typeReturn": "any"
+}

@@ -1,0 +1,31 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "anAddress",
+        "type": "string"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "First(NodeGeocoderGetGeocode(^anAddress))"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "anAddress",
+        "in": "Query",
+        "name": "address",
+        "remarks": "address in query string"
+      }
+    ],
+    "path": "/getgeocodeinfo",
+    "remarks": "gets a latitude and longitude"
+  }
+}

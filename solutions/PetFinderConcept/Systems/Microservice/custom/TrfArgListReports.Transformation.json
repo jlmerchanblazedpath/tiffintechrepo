@@ -1,0 +1,49 @@
+{
+  "betweens": [],
+  "source": {
+    "elementType": "Type",
+    "outputs": [
+      {
+        "codePath": "id",
+        "outputConnections": [
+          "c0"
+        ]
+      },
+      {
+        "codePath": "offset",
+        "outputConnections": [
+          "c1"
+        ]
+      },
+      {
+        "codePath": "limit",
+        "outputConnections": [
+          "c2"
+        ]
+      }
+    ],
+    "typeName": "ArgsListReportsByDist",
+    "x": 60,
+    "y": 60
+  },
+  "target": {
+    "elementType": "Type",
+    "inputs": [
+      {
+        "codePath": "id",
+        "inputConnection": "c0"
+      },
+      {
+        "codePath": "offset",
+        "inputConnection": "c1"
+      },
+      {
+        "codePath": "limit",
+        "inputConnection": "c2"
+      }
+    ],
+    "typeName": "ArgsListReports",
+    "x": 600,
+    "y": 60
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"add.svg\"",
+            "expressionStartModel": "{}",
+            "expressionTitle": "\"Report New Pet\"",
+            "mode": "right-drawer",
+            "size": "default",
+            "uiComponentName": "UiReportForm"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "openedModel.instance",
+                "variableName": "myReport"
+              },
+              {
+                "command": "Execute",
+                "expression": "Microservice.CreateReport(^myReport)"
+              },
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "openedModel"
+          },
+          {
+            "children": [
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnCancel"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "openedModel",
+            "type": "any"
+          },
+          {
+            "name": "myReport",
+            "type": "Microservice.Report"
+          }
+        ]
+      },
+      "name": "button1_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "SetValue",
+            "expression": "{}",
+            "widgetName": "htmlrenderer1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "main_init"
+    }
+  ],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "htmlTemplate": "<div>\n  <br>\n<h2>We've heard that you found someone's furry friend that went missing! <strong>Thank you for taking the time to report the missing friend!</strong> </h2>\n<p>We have created the following resources to help those pets in need!</p>\n\n<h2><strong> Please take into account the following tips to help his owner find him:</strong></h2>\n<ul>\n<li>Make sure you leave the address the pet was lost so that his original owner can find him by proximity! Our address can find pets by geolocation!</li>\n<li>Dont forget to leave contact information so his owner can get in contact with you to return his friend!\n<ul>\n</br>\nClick on the button below to start your pet find report.\n</br>\n</div>",
+        "name": "htmlrenderer1",
+        "widget": "HtmlRenderer"
+      },
+      {
+        "color": "primary",
+        "name": "button1",
+        "text": "Report New Pet",
+        "widget": "Button"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "report",
+        "type": "Report"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyDb.Reports, ^report)"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "report",
+        "in": "Body",
+        "name": "body",
+        "remarks": "Report to be created."
+      }
+    ],
+    "path": "/report",
+    "remarks": "Allows to create a new Report.",
+    "responses": []
+  }
+}

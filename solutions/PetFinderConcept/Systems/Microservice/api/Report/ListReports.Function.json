@@ -1,0 +1,44 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListReports"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(MyDb.Reports, This(), [RdsConditional(id == ^args.id, !IsNull(^args.id))], id, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(Report)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.id",
+        "in": "Query",
+        "name": "id",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/reports",
+    "remarks": "Allows to get a list of Reports.",
+    "responses": []
+  }
+}

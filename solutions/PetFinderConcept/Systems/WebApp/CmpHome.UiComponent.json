@@ -1,0 +1,43 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "SetValue",
+            "expression": "{}",
+            "widgetName": "htmlrenderer1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "main_init"
+    }
+  ],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "color": "default",
+        "name": "label1",
+        "text": "Welcome to Lost Friends!",
+        "widget": "Label"
+      },
+      {
+        "htmlTemplate": "<div>\n  \n  Thanks for helping lost friends find their way home.\n  </br>\n</br>\n</br>\n  Please select a menu option to continue\n</div>",
+        "name": "htmlrenderer1",
+        "widget": "HtmlRenderer"
+      }
+    ],
+    "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-main",
+    "horizontalSeparation": "large",
+    "layout": "container",
+    "verticalSeparation": "large"
+  },
+  "routing": {
+    "path": "/home"
+  },
+  "unused": []
+}

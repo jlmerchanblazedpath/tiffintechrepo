@@ -1,0 +1,51 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "loc1",
+        "type": "GeocodeInfo"
+      },
+      {
+        "name": "loc2",
+        "type": "GeocodeInfo"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Set",
+        "expression": "{ lat : ^loc1.latitude, lon: ^loc1.longitude }",
+        "variableName": "geoLoc1"
+      },
+      {
+        "command": "Set",
+        "expression": "{ lat : ^loc2.latitude, lon: ^loc2.longitude }",
+        "variableName": "geoLoc2"
+      },
+      {
+        "command": "Set",
+        "expression": "ConvertToDecimal(GeoDistanceGetDistance(^geoLoc1, ^geoLoc2))",
+        "variableName": "distanceInUnit"
+      },
+      {
+        "command": "Return",
+        "expression": "^distanceInUnit"
+      }
+    ],
+    "typeReturn": "decimal",
+    "variables": [
+      {
+        "name": "geoLoc1",
+        "type": "GeoDistanceLocation"
+      },
+      {
+        "name": "geoLoc2",
+        "type": "GeoDistanceLocation"
+      },
+      {
+        "name": "distanceInUnit",
+        "type": "decimal"
+      }
+    ]
+  },
+  "routing": null
+}

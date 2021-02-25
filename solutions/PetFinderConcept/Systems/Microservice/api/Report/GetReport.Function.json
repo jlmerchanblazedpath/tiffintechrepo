@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "id",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelectOne(MyDb.Reports, This(), id == ^id)"
+      }
+    ],
+    "typeReturn": "Report",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "id",
+        "in": "Path",
+        "name": "id",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/report/{id}",
+    "remarks": "Allows to get a Report.",
+    "responses": []
+  }
+}

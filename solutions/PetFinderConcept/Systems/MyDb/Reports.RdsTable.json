@@ -1,0 +1,65 @@
+{
+  "autoincrementalPrimaryKey": true,
+  "columns": [
+    {
+      "alias": "id",
+      "name": "ID",
+      "primaryKey": true,
+      "type": "integer"
+    },
+    {
+      "alias": "address",
+      "allowNull": true,
+      "name": "ADDRESS",
+      "type": "string"
+    },
+    {
+      "alias": "latitude",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "DECIMAL(2,10)",
+          "providerName": "MySql"
+        }
+      ],
+      "name": "LATITUDE",
+      "type": "decimal"
+    },
+    {
+      "alias": "longitude",
+      "allowNull": false,
+      "dbTypes": [
+        {
+          "dbType": "DECIMAL(2,10)",
+          "providerName": "MySql"
+        }
+      ],
+      "name": "LONGITUDE",
+      "type": "decimal"
+    },
+    {
+      "alias": "contactInfo",
+      "name": "CONTACT_INFO",
+      "type": "string"
+    },
+    {
+      "alias": "image",
+      "allowNull": true,
+      "name": "IMAGE",
+      "type": "string"
+    },
+    {
+      "alias": "distance",
+      "allowNull": true,
+      "name": "DISTANCE",
+      "type": "decimal"
+    }
+  ],
+  "foreignKeys": [],
+  "indexes": [],
+  "isView": false,
+  "primaryKeyName": "ID",
+  "sequenceName": "SQ_REPORTS",
+  "tableName": "REPORTS",
+  "uniqueKeys": []
+}

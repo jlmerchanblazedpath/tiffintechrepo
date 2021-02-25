@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "node-geocoder": "^3.27.0"
+  }
+}

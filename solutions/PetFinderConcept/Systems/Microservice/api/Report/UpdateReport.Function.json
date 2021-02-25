@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "id",
+        "type": "integer"
+      },
+      {
+        "name": "report",
+        "type": "Report"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyDb.Reports, ^report, id == ^id)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "id",
+        "in": "Path",
+        "name": "id",
+        "remarks": "Id."
+      },
+      {
+        "bind": "report",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New Report information to be updated."
+      }
+    ],
+    "path": "/report/{id}",
+    "remarks": "Allows to update an existing Report.",
+    "responses": []
+  }
+}

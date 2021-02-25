@@ -1,0 +1,4 @@
+{
+  "remarks": "return type with only latitude and longitude",
+  "type": "obj(latitude:decimal,longitude:decimal)"
+}

@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "systemName": "WebApp",
+      "action": "build",
+      "buildPort": 9080
+    },
+    {
+      "systemName": "MyDb",
+      "action": "mock",
+      "mockInitialization": {
+        "records": [
+          {
+            "rdsTableName": "Reports",
+            "id": "ReportOne",
+            "address": "2327 Dufferin St, York, ON M6E 3S5, Canada",
+            "latitude": 43.693506,
+            "longitude": -79.449351,
+            "contactInfo": "Please call Peter",
+            "image": "https://www.homewardpet.org/wp-content/uploads/2017/12/44edc33d-df54-484d-be5f-869bdd0b7cc9.jpg"
+          },
+          {
+            "rdsTableName": "Reports",
+            "id": "ReportTwo",
+            "address": "2251-2329 Dufferin St, Toronto, ON, Canada",
+            "latitude": 43.692541,
+            "longitude": -79.448939,
+            "contactInfo": "987-333-1243 Call me, your dog wants you back!",
+            "image": "https://a.scpr.org/i/da1f7b6e24ab0d7f27d07b754456422a/88610-full.jpg"
+          },
+          {
+            "rdsTableName": "Reports",
+            "id": "ReportThree",
+            "address": "373B Oakwood Ave, York, ON M6E 2W1, Canada",
+            "latitude": 43.687671,
+            "longitude": -79.438918,
+            "contactInfo": "This cat needs his owner! Write me to tifffoundacat@gmail.com",
+            "image": "https://s30379.pcdn.co/wp-content/uploads/2019/09/p1cuv198jk1t3oief1vesoae1rnq6.jpg"
+          },
+          {
+            "rdsTableName": "Reports",
+            "id": "ReportFour",
+            "address": "100 SE 3rd Ave, Fort Lauderdale, FL 33394",
+            "latitude": 26.122285,
+            "longitude": -80.139787,
+            "contactInfo": "This squirrel is eating all my almonds! Call Blazedpath to get bit back! 111-222-3322",
+            "image": "https://www.aces.edu/wp-content/uploads/2020/10/Picture-1-Eastern-gray-squirrel-scaled-e1603227928641.jpg"
+          }  
+        ]
+      }
+    }
+  ]
+}

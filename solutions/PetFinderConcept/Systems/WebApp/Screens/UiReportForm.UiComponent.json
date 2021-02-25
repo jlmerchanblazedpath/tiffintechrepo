@@ -1,0 +1,122 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "GetValue",
+            "variableName": "myAddress",
+            "widgetName": "txtAddress"
+          },
+          {
+            "children": [
+              {
+                "command": "ConsoleLog",
+                "expression": "\"Please complete an address!\""
+              }
+            ],
+            "command": "If",
+            "expression": "IsNullOrWhiteSpace(^myAddress)"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "Microservice.GetGeocodeInfo(^myAddress)",
+                "variableName": "myGeocodeInfo"
+              },
+              {
+                "command": "SetValue",
+                "expression": "^myGeocodeInfo.latitude",
+                "widgetName": "numLatitude"
+              },
+              {
+                "command": "SetValue",
+                "expression": "^myGeocodeInfo.longitude",
+                "widgetName": "numLongitude"
+              }
+            ],
+            "command": "Else"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "myAddress",
+            "type": "string"
+          },
+          {
+            "name": "myGeocodeInfo",
+            "type": "Microservice.GeocodeInfo"
+          }
+        ]
+      },
+      "name": "button1_click"
+    }
+  ],
+  "model": [
+    {
+      "name": "instance",
+      "required": false,
+      "type": "Microservice.Report"
+    }
+  ],
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "binding": "instance.address",
+            "label": "[[Address]]",
+            "name": "txtAddress",
+            "widget": "TextBox"
+          },
+          {
+            "color": "primary",
+            "name": "button1",
+            "text": "ConvertToLatitude",
+            "widget": "Button"
+          },
+          {
+            "allowDecimals": true,
+            "allowNegative": true,
+            "binding": "instance.latitude",
+            "decimalPlaces": 10,
+            "label": "[[Latitude]]",
+            "name": "numLatitude",
+            "readOnly": true,
+            "widget": "NumericBox"
+          },
+          {
+            "allowDecimals": true,
+            "allowNegative": true,
+            "binding": "instance.longitude",
+            "decimalPlaces": 10,
+            "label": "[[Longitude]]",
+            "name": "numLongitude",
+            "readOnly": true,
+            "widget": "NumericBox"
+          },
+          {
+            "binding": "instance.contactInfo",
+            "label": "[[ContactInfo]]",
+            "name": "txtContactInfo",
+            "widget": "TextBox"
+          },
+          {
+            "binding": "instance.image",
+            "label": "[[PetImage]]",
+            "name": "textbox1",
+            "widget": "TextBox"
+          }
+        ],
+        "layout": "container"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

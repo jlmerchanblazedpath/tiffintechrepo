@@ -1,0 +1,153 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListReportsByDist"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Set",
+        "expression": "ListReports(Transform(TrfArgListReports, ^args))",
+        "variableName": "myList"
+      },
+      {
+        "children": [
+          {
+            "command": "Return",
+            "expression": "^myList"
+          }
+        ],
+        "command": "If",
+        "expression": "IsNullOrWhiteSpace(^args.address)"
+      },
+      {
+        "children": [
+          {
+            "command": "Set",
+            "expression": "GetGeocodeInfo(^args.address)",
+            "variableName": "baseGeocode"
+          },
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "baseLocation"
+          },
+          {
+            "command": "Set",
+            "expression": "^baseGeocode.latitude",
+            "variableName": "baseLocation.lat"
+          },
+          {
+            "command": "Set",
+            "expression": "^baseGeocode.longitude",
+            "variableName": "baseLocation.lon"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "{}",
+                "variableName": "tarLocation"
+              },
+              {
+                "command": "Set",
+                "expression": "^oneReport.latitude",
+                "variableName": "tarLocation.lat"
+              },
+              {
+                "command": "Set",
+                "expression": "^oneReport.longitude",
+                "variableName": "tarLocation.lon"
+              },
+              {
+                "command": "Set",
+                "expression": "GeoDistanceGetDistance(^baseLocation, ^tarLocation, \"mi\")",
+                "variableName": "oneReport.distance"
+              }
+            ],
+            "command": "ForEach",
+            "expressionList": "^myList",
+            "variableNameItem": "oneReport"
+          },
+          {
+            "command": "Set",
+            "expression": "FindAll(^myList, distance  <= ^args.distance)",
+            "variableName": "myListByDistance"
+          },
+          {
+            "command": "Return",
+            "expression": "^myListByDistance"
+          }
+        ],
+        "command": "Else"
+      }
+    ],
+    "typeReturn": "list(Report)",
+    "variables": [
+      {
+        "name": "baseGeocode",
+        "type": "NodeGeocoderGeocode"
+      },
+      {
+        "name": "myList",
+        "type": "list(Report)"
+      },
+      {
+        "name": "myListByDistance",
+        "type": "list(Report)"
+      },
+      {
+        "name": "oneReport",
+        "type": "Report"
+      },
+      {
+        "name": "baseLocation",
+        "type": "GeoDistanceLocation"
+      },
+      {
+        "name": "tarLocation",
+        "type": "GeoDistanceLocation"
+      }
+    ]
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.id",
+        "in": "Query",
+        "name": "id",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      },
+      {
+        "bind": "args.distance",
+        "in": "Query",
+        "name": "distance",
+        "remarks": "distance"
+      },
+      {
+        "bind": "args.address",
+        "in": "Query",
+        "name": "address",
+        "remarks": "address to compare against"
+      }
+    ],
+    "path": "/reportsbydistance",
+    "remarks": "Allows to get a list of Reports.",
+    "responses": []
+  }
+}

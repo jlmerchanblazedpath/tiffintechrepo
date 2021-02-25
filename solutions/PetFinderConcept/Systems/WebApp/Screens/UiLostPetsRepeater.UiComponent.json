@@ -1,0 +1,126 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Refresh",
+            "widgetName": "repeater1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "args",
+            "type": "ArgsLoadRecords"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "args1"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.offset",
+            "variableName": "args1.offset"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.limit",
+            "variableName": "args1.limit"
+          },
+          {
+            "command": "GetValue",
+            "variableName": "args1.address",
+            "widgetName": "textbox1"
+          },
+          {
+            "command": "GetValue",
+            "variableName": "args1.distance",
+            "widgetName": "numericbox1"
+          },
+          {
+            "command": "Return",
+            "expression": "Microservice.ListReportsByDistance(^args1)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "args1",
+            "type": "Microservice.ArgsListReportsByDist"
+          }
+        ]
+      },
+      "name": "repeater1_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Refresh",
+            "widgetName": "repeater1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "button1_click"
+    }
+  ],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "label": "[[Address]]",
+        "name": "textbox1",
+        "size": "half",
+        "widget": "TextBox"
+      },
+      {
+        "label": "[[Distance (Mi.)]]",
+        "name": "numericbox1",
+        "size": "2/12",
+        "widget": "NumericBox"
+      },
+      {
+        "align": "left",
+        "color": "primary",
+        "dock": "previous",
+        "name": "button1",
+        "text": "[[Search]]",
+        "widget": "Button"
+      },
+      {
+        "cardBorder": true,
+        "cardBorderRadius": true,
+        "cardCastShadow": true,
+        "cardSize": "half",
+        "horizontalSeparation": "large",
+        "name": "repeater1",
+        "size": "12/12",
+        "uiComponentBinding": {
+          "report": "{record}"
+        },
+        "uiComponentName": "UiLostPet",
+        "verticalSeparation": "normal",
+        "widget": "Repeater"
+      }
+    ],
+    "cssClass": "blz-area-info",
+    "layout": "container",
+    "title": "[[ReportedPets]]"
+  },
+  "routing": null,
+  "unused": []
+}

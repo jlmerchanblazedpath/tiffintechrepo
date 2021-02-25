@@ -1,0 +1,25 @@
+{
+  "algorithm": {
+    "parameters": [],
+    "statements": [
+      {
+        "command": "Set",
+        "expression": "GetGeocodeInfo(\"1 E Broward Blvd, Fort Lauderdale, FL 33301, USA\")",
+        "variableName": "myInfo"
+      },
+      {
+        "command": "Assert",
+        "expression1": "^myInfo.latitude",
+        "expression2": "26.1227824",
+        "operator": "=="
+      }
+    ],
+    "typeReturn": "any",
+    "variables": [
+      {
+        "name": "myInfo",
+        "type": "GeocodeInfo"
+      }
+    ]
+  }
+}

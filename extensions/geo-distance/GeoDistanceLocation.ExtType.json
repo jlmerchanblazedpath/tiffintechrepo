@@ -1,0 +1,4 @@
+{
+  "remarks": "object with a latitude and a longitude decimal value.",
+  "type": "obj(lat:integer,lon:integer)"
+}

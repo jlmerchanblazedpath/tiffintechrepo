@@ -1,0 +1,24 @@
+{
+  "async": false,
+  "dual": false,
+  "parameters": [
+    {
+      "name": "loc1",
+      "remarks": "the source point",
+      "type": "GeoDistanceLocation"
+    },
+    {
+      "name": "loc2",
+      "remarks": "the target location",
+      "type": "GeoDistanceLocation"
+    },
+    {
+      "name": "unit",
+      "optional": true,
+      "remarks": "unit of the distance",
+      "type": "string"
+    }
+  ],
+  "remarks": "gets distance between two geolocations",
+  "typeReturn": "decimal"
+}
