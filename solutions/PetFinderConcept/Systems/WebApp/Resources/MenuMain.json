@@ -1,14 +1,14 @@
 [
   {
     "children": [],
-    "icon": "logo.svg",
-    "text": "LostPetsList",
+    "icon": "search.svg",
+    "text": "Lost Pets List",
     "uiComponentName": "UiLostPetsRepeater"
   },
   {
     "children": [],
-    "icon": "logo.svg",
-    "text": "[[ReportNewPet]]",
+    "icon": "report.svg",
+    "text": "Pet Report",
     "uiComponentName": "UiReportNewPet"
   }
 ]

@@ -90,7 +90,7 @@
       {
         "label": "[[Distance (Mi.)]]",
         "name": "numericbox1",
-        "size": "2/12",
+        "size": "quarter",
         "widget": "NumericBox"
       },
       {
@@ -113,14 +113,17 @@
           "report": "{record}"
         },
         "uiComponentName": "UiLostPet",
-        "verticalSeparation": "normal",
+        "verticalSeparation": "large",
         "widget": "Repeater"
       }
     ],
-    "cssClass": "blz-area-info",
+    "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-default",
+    "icon": "search.svg",
     "layout": "container",
     "title": "[[ReportedPets]]"
   },
-  "routing": null,
+  "routing": {
+    "path": "/search"
+  },
   "unused": []
 }

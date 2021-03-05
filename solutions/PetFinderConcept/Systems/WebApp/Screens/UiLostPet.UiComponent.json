@@ -36,82 +36,105 @@
   "root": {
     "children": [
       {
-        "cssClass": "image_centered",
-        "htmlTemplate": "<div class=\"container\">\n  <!-- Normal Demo-->\n    <div class=\"post-module\">\n      <!-- Thumbnail-->\n      <div class=\"thumbnail\">\n        <img width=\"420\" height=\"310\" margin-left=\"auto\" margin-right=\"auto\" src=\"{{image}}\"/>\n      </div>\n      <!-- Post Content-->\n    </div>\n</div>",
-        "name": "htmlrenderer1",
-        "widget": "HtmlRenderer"
+        "children": [
+          {
+            "cssClass": "image_centered",
+            "htmlTemplate": "<div class=\"container\">\n  <!-- Normal Demo-->\n    <div class=\"post-module\">\n      <!-- Thumbnail-->\n      <div class=\"thumbnail\">\n        <img class=\"pet-image\" style=\"border-radius:6px;border:1px solid black\" margin-left=\"auto\" margin-right=\"auto\" src=\"{{image}}\"/>\n      </div>\n      <!-- Post Content-->\n    </div>\n</div>",
+            "name": "htmlrenderer1",
+            "size": "12/12",
+            "widget": "HtmlRenderer"
+          }
+        ],
+        "layout": "container",
+        "size": "third"
       },
       {
-        "align": "center",
-        "color": "primary",
-        "name": "label1",
-        "text": "[[ContactInfo]]:",
-        "widget": "Label"
-      },
-      {
-        "align": "left",
-        "binding": "report.contactInfo",
-        "color": "default",
-        "dock": "previous",
-        "name": "field1",
-        "widget": "Field"
-      },
-      {
-        "align": "center",
-        "color": "primary",
-        "name": "label2",
-        "text": "Address",
-        "widget": "Label"
-      },
-      {
-        "align": "left",
-        "binding": "report.address",
-        "color": "default",
-        "dock": "previous",
-        "name": "field2",
-        "widget": "Field"
-      },
-      {
-        "align": "center",
-        "color": "success",
-        "name": "label4",
-        "text": "[[Lat:]]",
-        "widget": "Label"
-      },
-      {
-        "align": "left",
-        "binding": "report.latitude",
-        "color": "default",
-        "dock": "previous",
-        "name": "field3",
-        "widget": "Field"
-      },
-      {
-        "align": "left",
-        "color": "default",
-        "dock": "previous",
-        "name": "label5",
-        "text": "//",
-        "widget": "Label"
-      },
-      {
-        "align": "left",
-        "color": "success",
-        "dock": "previous",
-        "name": "label3",
-        "text": "[[Lon:]]",
-        "widget": "Label"
-      },
-      {
-        "align": "left",
-        "binding": "report.longitude",
-        "color": "default",
-        "dock": "previous",
-        "name": "field4",
-        "widget": "Field"
+        "children": [
+          {
+            "align": "left",
+            "color": "primary",
+            "name": "label1",
+            "size": "small",
+            "text": "[[ContactInfo]]:",
+            "widget": "Label"
+          },
+          {
+            "align": "left",
+            "binding": "report.contactInfo",
+            "color": "default",
+            "dock": "previous",
+            "name": "field1",
+            "size": "small",
+            "widget": "Field"
+          },
+          {
+            "align": "left",
+            "color": "primary",
+            "name": "label2",
+            "size": "small",
+            "text": "[[Address]]",
+            "widget": "Label"
+          },
+          {
+            "align": "left",
+            "binding": "report.address",
+            "color": "default",
+            "dock": "previous",
+            "name": "field2",
+            "size": "small",
+            "widget": "Field"
+          },
+          {
+            "align": "left",
+            "color": "success",
+            "name": "label4",
+            "size": "small",
+            "text": "[[Lat]]:",
+            "widget": "Label"
+          },
+          {
+            "align": "left",
+            "binding": "report.latitude",
+            "color": "default",
+            "dock": "previous",
+            "name": "field3",
+            "size": "small",
+            "widget": "Field"
+          },
+          {
+            "align": "left",
+            "color": "default",
+            "dock": "previous",
+            "name": "label5",
+            "size": "small",
+            "text": "//",
+            "widget": "Label"
+          },
+          {
+            "align": "left",
+            "color": "success",
+            "dock": "previous",
+            "name": "label3",
+            "size": "small",
+            "text": "[[Lon]]:",
+            "widget": "Label"
+          },
+          {
+            "align": "left",
+            "binding": "report.longitude",
+            "color": "default",
+            "dock": "previous",
+            "name": "field4",
+            "size": "small",
+            "widget": "Field"
+          }
+        ],
+        "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-small",
+        "layout": "container",
+        "size": "two-third"
       }
     ],
-    "cssClass": "blz-area-default",
+    "cssClass": "blz-padding-top-large blz-padding-bottom-large blz-area-default",
     "layout": "container"
   },
   "routing": null,

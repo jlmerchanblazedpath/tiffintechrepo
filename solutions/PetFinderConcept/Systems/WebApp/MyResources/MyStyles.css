@@ -2,5 +2,24 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 150px;
+  height: 100px;
+}
+
+.pet-image {
+  width:150px;
+  height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .image_centered {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pet-image {
+  	width:450px;
+    height:auto;
+  }
+
 }

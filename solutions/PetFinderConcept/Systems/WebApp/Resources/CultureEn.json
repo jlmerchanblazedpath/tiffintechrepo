@@ -127,8 +127,36 @@
       "value": "December"
     },
     {
-      "key": "ShowMore",
-      "value": "Show More"
+      "key": "ReportedPets",
+      "value": "Reported Pets"
+    },
+    {
+      "key": "Address",
+      "value": "Address"
+    },
+    {
+      "key": "ContactInfo",
+      "value": "Contact"
+    },
+    {
+      "key": "Lat",
+      "value": "Lat"
+    },
+    {
+      "key": "Lon",
+      "value": "Lon"
+    },
+    {
+      "key": "Distance (Mi.)",
+      "value": "Distance (Mi.)"
+    },
+    {
+      "key": "Search",
+      "value": "Search"
+    },
+    {
+      "key": "Report",
+      "value": "Report"
     }
   ]
 }

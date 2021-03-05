@@ -5,30 +5,110 @@
         "parameters": [],
         "statements": [
           {
-            "command": "SetValue",
-            "expression": "{}",
-            "widgetName": "htmlrenderer1"
+            "command": "Navigate",
+            "expressionStartModel": "{}",
+            "uiComponentName": "UiLostPetsRepeater"
           }
         ],
         "typeReturn": "any",
         "variables": []
       },
-      "name": "main_init"
+      "name": "searchIcon_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "{}",
+            "uiComponentName": "UiReportNewPet"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "reportIcon_click"
     }
   ],
   "model": [],
   "root": {
+    "alignItems": "center",
     "children": [
       {
+        "align": "center",
+        "bold": true,
         "color": "default",
+        "cssClass": "blz-padding-top-large",
         "name": "label1",
+        "size": "x-large",
         "text": "Welcome to Lost Friends!",
         "widget": "Label"
       },
       {
-        "htmlTemplate": "<div>\n  \n  Thanks for helping lost friends find their way home.\n  </br>\n</br>\n</br>\n  Please select a menu option to continue\n</div>",
-        "name": "htmlrenderer1",
-        "widget": "HtmlRenderer"
+        "align": "center",
+        "color": "default",
+        "name": "label2",
+        "text": "Thanks for helping lost friends find their way home.",
+        "widget": "Label"
+      },
+      {
+        "align": "center",
+        "color": "default",
+        "cssClass": "blz-padding-bottom-large",
+        "name": "label3",
+        "text": "Please select an option to continue.",
+        "widget": "Label"
+      },
+      {
+        "children": [
+          {
+            "align": "center",
+            "clickable": true,
+            "color": "primary",
+            "icon": "search.svg",
+            "name": "searchIcon",
+            "size": "x-large",
+            "widget": "Icon"
+          },
+          {
+            "align": "center",
+            "bold": true,
+            "color": "primary",
+            "italic": true,
+            "name": "label4",
+            "text": "[[Search]]",
+            "widget": "Label"
+          }
+        ],
+        "cssClass": "blz-padding-top-large",
+        "layout": "container",
+        "size": "2/12"
+      },
+      {
+        "children": [
+          {
+            "align": "center",
+            "clickable": true,
+            "color": "success",
+            "icon": "report.svg",
+            "name": "reportIcon",
+            "size": "x-large",
+            "widget": "Icon"
+          },
+          {
+            "align": "center",
+            "bold": true,
+            "color": "success",
+            "italic": true,
+            "name": "label5",
+            "text": "[[Report]]",
+            "widget": "Label"
+          }
+        ],
+        "cssClass": "blz-padding-top-large",
+        "layout": "container",
+        "size": "2/12"
       }
     ],
     "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-main",
@@ -39,5 +119,12 @@
   "routing": {
     "path": "/home"
   },
-  "unused": []
+  "unused": [
+    {
+      "__internalName": "htmlrenderer1",
+      "htmlTemplate": "<div>\n  \n  Thanks for helping lost friends find their way home.\n  </br>\n</br>\n</br>\n  Please select a menu option to continue\n</div>",
+      "name": "htmlrenderer1",
+      "widget": "HtmlRenderer"
+    }
+  ]
 }

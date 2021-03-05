@@ -73,22 +73,31 @@
   ],
   "model": [],
   "root": {
+    "alignItems": "center",
     "children": [
       {
-        "htmlTemplate": "<div>\n  <br>\n<h2>We've heard that you found someone's furry friend that went missing! <strong>Thank you for taking the time to report the missing friend!</strong> </h2>\n<p>We have created the following resources to help those pets in need!</p>\n\n<h2><strong> Please take into account the following tips to help his owner find him:</strong></h2>\n<ul>\n<li>Make sure you leave the address the pet was lost so that his original owner can find him by proximity! Our address can find pets by geolocation!</li>\n<li>Dont forget to leave contact information so his owner can get in contact with you to return his friend!\n<ul>\n</br>\nClick on the button below to start your pet find report.\n</br>\n</div>",
+        "cssClass": "blz-padding-bottom-large",
+        "htmlTemplate": "<div>\n    <section style=\"padding-left: 25px;padding-right: 25px\">\n        <br>\n        <h3>We've heard that you found someone's furry friend that went missing! <strong>Thank you for taking the time to report the missing friend!</strong> </h3>\n        <p>We have created the following resources to help those pets in need!</p>\n\n        <h3><strong> Please take into account the following tips to help his owner find him:</strong></h3>\n        <ul>\n            <li>Make sure you leave the address the pet was lost so that his original owner can find him by proximity! Our address can find pets by geolocation!</li>\n            <li>Dont forget to leave contact information so his owner can get in contact with you to return his friend!</li>\n        </ul>\n        </br>\n        Click on the button below to start your pet find report.\n        </br>\n    </section>\n</div>",
+        "icon": "report.svg",
         "name": "htmlrenderer1",
+        "size": "two-third",
+        "title": "Pet Report",
         "widget": "HtmlRenderer"
       },
       {
-        "color": "primary",
+        "align": "center",
+        "color": "success",
+        "cssClass": "blz-padding-top-large",
         "name": "button1",
         "text": "Report New Pet",
         "widget": "Button"
       }
     ],
-    "cssClass": "blz-area-default",
+    "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-default",
     "layout": "container"
   },
-  "routing": null,
+  "routing": {
+    "path": "/report"
+  },
   "unused": []
 }
