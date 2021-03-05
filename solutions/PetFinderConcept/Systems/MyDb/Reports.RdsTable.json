@@ -16,24 +16,14 @@
     {
       "alias": "latitude",
       "allowNull": false,
-      "dbTypes": [
-        {
-          "dbType": "DECIMAL(2,10)",
-          "providerName": "MySql"
-        }
-      ],
+      "dbTypes": [],
       "name": "LATITUDE",
       "type": "decimal"
     },
     {
       "alias": "longitude",
       "allowNull": false,
-      "dbTypes": [
-        {
-          "dbType": "DECIMAL(2,10)",
-          "providerName": "MySql"
-        }
-      ],
+      "dbTypes": [],
       "name": "LONGITUDE",
       "type": "decimal"
     },
