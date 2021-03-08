@@ -13,6 +13,11 @@
             "command": "SetValue",
             "expression": "^myReport",
             "widgetName": "htmlrenderer1"
+          },
+          {
+            "command": "SetValue",
+            "expression": "{ linkUrl: createGoogleMapLocationUrl(^myReport.latitude, ^myReport.longitude) }",
+            "widgetName": "htmlrenderer2"
           }
         ],
         "typeReturn": "any",
@@ -24,6 +29,29 @@
         ]
       },
       "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "lat",
+            "type": "decimal"
+          },
+          {
+            "name": "lon",
+            "type": "decimal"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Return",
+            "expression": "\"http://maps.google.com/maps?q=\"+ConvertToString(^lat)+\",\"+ConvertToString(^lon)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "createGoogleMapLocationUrl"
     }
   ],
   "model": [
@@ -127,6 +155,11 @@
             "name": "field4",
             "size": "small",
             "widget": "Field"
+          },
+          {
+            "htmlTemplate": "<div>\n  <a href=\"{{linkUrl}}\">[[SeeLocationInMaps]]</a>\n</div>",
+            "name": "htmlrenderer2",
+            "widget": "HtmlRenderer"
           }
         ],
         "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-small",
@@ -138,5 +171,24 @@
     "layout": "container"
   },
   "routing": null,
-  "unused": []
+  "unused": [
+    {
+      "__internalName": "label6",
+      "align": "left",
+      "color": "primary",
+      "name": "label6",
+      "size": "small",
+      "text": "[[GoToMap]]:",
+      "widget": "Label"
+    },
+    {
+      "__internalName": "link1",
+      "align": "left",
+      "name": "link1",
+      "size": "small",
+      "text": "[[SeeLocationInMaps]]",
+      "underline": true,
+      "widget": "Link"
+    }
+  ]
 }
