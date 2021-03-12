@@ -1,0 +1,168 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Refresh",
+            "widgetName": "grid1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "grid1_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "args",
+            "type": "ArgsLoadRecords"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "args1"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.offset",
+            "variableName": "args1.offset"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.limit",
+            "variableName": "args1.limit"
+          },
+          {
+            "command": "Return",
+            "expression": "Microservice.ListReports(^args1)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "args1",
+            "type": "Microservice.ArgsListReports"
+          }
+        ]
+      },
+      "name": "grid1_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"add.svg\"",
+            "expressionStartModel": "{}",
+            "expressionTitle": "\"Add full pet report\"",
+            "mode": "right-drawer",
+            "size": "default",
+            "uiComponentName": "UiReportsFormFull"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "openedModel.instance",
+                "variableName": "myReport"
+              },
+              {
+                "command": "Execute",
+                "expression": "Microservice.CreateReport(^myReport)"
+              },
+              {
+                "command": "CloseCurrent"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "grid1"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "openedModel"
+          },
+          {
+            "children": [
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnCancel"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "openedModel",
+            "type": "any"
+          },
+          {
+            "name": "myReport",
+            "type": "Microservice.Report"
+          }
+        ]
+      },
+      "name": "grid1_handlerAction_Add"
+    }
+  ],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "actions": [
+          {
+            "icon": "add.svg",
+            "key": "Add",
+            "text": "Add"
+          }
+        ],
+        "columns": [
+          {
+            "align": "left",
+            "bindText": "id",
+            "format": "Number",
+            "header": "Id",
+            "size": 1
+          },
+          {
+            "align": "left",
+            "bindText": "latitude",
+            "format": "Number:2",
+            "header": "Latitude",
+            "size": 1
+          },
+          {
+            "align": "left",
+            "bindText": "longitude",
+            "format": "Number:2",
+            "header": "Longitude",
+            "size": 1
+          },
+          {
+            "align": "left",
+            "bindText": "contactInfo",
+            "header": "Contact Info",
+            "size": 1
+          }
+        ],
+        "name": "grid1",
+        "pageSize": 20,
+        "typeName": "Microservice.Report",
+        "widget": "Grid",
+        "withPaging": true
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

@@ -8,12 +8,22 @@
     ],
     "statements": [
       {
+        "command": "ReadConfigParameter",
+        "configParameterName": "GoogleMapApiKey",
+        "variableName": "googleApiKey"
+      },
+      {
         "command": "Return",
-        "expression": "First(NodeGeocoderGetGeocode(^anAddress))"
+        "expression": "First(NodeGeocoderGetGeocode(^anAddress, ^googleApiKey))"
       }
     ],
     "typeReturn": "any",
-    "variables": []
+    "variables": [
+      {
+        "name": "googleApiKey",
+        "type": "string"
+      }
+    ]
   },
   "routing": {
     "method": "GET",

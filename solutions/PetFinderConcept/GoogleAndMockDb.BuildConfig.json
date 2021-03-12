@@ -6,6 +6,16 @@
       "buildPort": 9080
     },
     {
+      "systemName": "Microservice",
+      "action": "build",
+      "parameters": [
+        {
+          "configParameterName": "GoogleMapApiKey",
+          "value": "AIzaSyA4aRFGcSF1kKOH-vy8zGt7xryaj3T3FWo"
+        }
+      ]
+    },
+    {
       "systemName": "MyDb",
       "action": "mock",
       "mockInitialization": {
@@ -45,7 +55,7 @@
             "longitude": -80.139787,
             "contactInfo": "This squirrel is eating all my almonds! Call Blazedpath to get bit back! 111-222-3322",
             "image": "https://www.aces.edu/wp-content/uploads/2020/10/Picture-1-Eastern-gray-squirrel-scaled-e1603227928641.jpg"
-          }  
+          }
         ]
       }
     }

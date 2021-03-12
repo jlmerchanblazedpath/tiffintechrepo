@@ -10,5 +10,11 @@
     "icon": "report.svg",
     "text": "Pet Report",
     "uiComponentName": "UiReportNewPet"
+  },
+  {
+    "children": [],
+    "icon": "report.svg",
+    "text": "ReportsAbm",
+    "uiComponentName": "UiReportsGrid"
   }
 ]

@@ -7,6 +7,11 @@
       "optional": true,
       "remarks": "flex parameter that contains all the info by attributes",
       "type": "string"
+    },
+    {
+      "name": "googleMapApiKey",
+      "remarks": "the google map api key for the environment",
+      "type": "string"
     }
   ],
   "remarks": "gets geocode information from an address",

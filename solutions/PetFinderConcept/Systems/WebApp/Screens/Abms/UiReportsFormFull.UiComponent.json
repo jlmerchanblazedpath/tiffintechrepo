@@ -1,0 +1,59 @@
+{
+  "eventsAndFunctions": [],
+  "model": [
+    {
+      "name": "instance",
+      "required": false,
+      "type": "Microservice.Report"
+    }
+  ],
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "binding": "instance.address",
+            "label": "Address",
+            "name": "txtAddress",
+            "widget": "TextBox"
+          },
+          {
+            "binding": "instance.latitude",
+            "label": "Latitude",
+            "name": "numLatitude",
+            "widget": "NumericBox"
+          },
+          {
+            "binding": "instance.longitude",
+            "label": "Longitude",
+            "name": "numLongitude",
+            "widget": "NumericBox"
+          },
+          {
+            "binding": "instance.contactInfo",
+            "label": "Contact Info",
+            "name": "txtContactInfo",
+            "widget": "TextBox"
+          },
+          {
+            "binding": "instance.image",
+            "label": "Image",
+            "name": "txtImage",
+            "widget": "TextBox"
+          },
+          {
+            "binding": "instance.distance",
+            "label": "Distance",
+            "name": "numDistance",
+            "widget": "NumericBox"
+          }
+        ],
+        "layout": "container"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}
